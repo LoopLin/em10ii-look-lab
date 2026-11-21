@@ -64,7 +64,7 @@ python tools/mkpatch.py OLY_E_120_1400_0000_0000.BIN \
 ```
 .
 ├── README.md            本文件
-├── LICENSE              GPL-3.0 全文
+├── LICENSE              Apache-2.0 全文
 ├── NOTICE               第三方出处与许可
 ├── SAFETY.md            机型限定、变砖风险、恢复步骤
 ├── QUICKSTART.md        五步上手（自备官方包 → 校验 → 打补丁 → 拷卡 → 验证）
@@ -88,7 +88,7 @@ python tools/mkpatch.py OLY_E_120_1400_0000_0000.BIN \
 
 ## 许可
 
-代码与文档以 **GPL-3.0** 发布（`LICENSE` 为全文）。第三方组件、参考项目与数值来源见 `NOTICE`。官方固件、商业 LUT 与实拍素材不在本仓库内，也不随本仓库分发。
+代码以 **Apache-2.0** 发布（`LICENSE` 为全文），文档内容以 **CC BY 4.0** 提供。第三方组件、参考项目与数值来源见 `NOTICE`。官方固件、商业 LUT 与实拍素材不在本仓库内，也不随本仓库分发。
 
 ## 不在包里的东西
 
