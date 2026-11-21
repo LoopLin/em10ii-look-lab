@@ -1,0 +1,71 @@
+# NOTICE
+
+本发行版包含的代码与文档以 **Apache License 2.0** 发布（见 `LICENSE`）；文档内容以 CC BY 4.0 提供。下列第三方项目仅作**方法参考/流程参考/数值来源**使用，未整段拷贝其源码；`docs/refs/` 下两份文档是我们自己写的摘要，每份中引用的代码片段合计不超过 30 行，其余以「上游文件 + 行号」指针替代。
+
+## 第三方项目
+
+| 来源 | 许可 | 我们怎么用 | 义务 |
+|---|---|---|---|
+| `flatpanda/om-emu` | MIT | 早期用作仿真器底座（fork + Windows 路径修补） | 保留原作者版权声明与 MIT 许可文本；改动处注明来源 |
+| `fishcu/oly_fw_analysis` | Apache-2.0 | 读其文档、参考分析流程 | 保留 NOTICE；**不复制正文**，只留链接与摘要 |
+| `cakelesscoder/caduceus-ep7`（参考版本 v0.34a） | Apache-2.0 | 读其文档、参考发布纪律与补丁预检块设计 | 同上；`docs/refs/caduceus-e-p7.md` 属摘要，已抽查引用比例 |
+| `cmdada/em10-fw` | GPL-3.0 | **仅阅读思路**（最长公共 token 串 0.5%，未复制代码） | 无；本包为 Apache-2.0，不含其代码 |
+| LibRaw `colordata.cpp` | LGPL-2.1 / CDDL | **只取色彩矩阵数值** | 数值属事实性数据，此处注明来源；未拷贝其代码 |
+
+## 不包含的第三方内容
+
+- **官方固件**（Olympus / OM Digital Solutions）：本包不含任何 `*.BIN`，请自行从官方渠道获取 `E120 1400 0000 0000` 版本。
+- **商业 LUT / 胶片风格预设包**：本包不含 `*.cube`、`*.xmp` 或任何厂商预设文件；文档里只以中性编号 `look-01 … look-04` 指代参考对象。
+- **实拍照片**：本包不含 `*.JPG` / `*.ORF`。`assets/` 下只有自制的色卡与 ramp 图。
+- **第三方仓库副本**：本包不含任何上游仓库的整份代码或文档拷贝。
+
+## 蒸馏说明
+
+`docs/refs/penf-oly-fw-analysis.md`、`docs/refs/caduceus-e-p7.md` 为方法摘要：保留结论、步骤与接口约定，去掉上游原文的大段叙述与代码；引用片段同时给出上游 `file:line`，便于读者回查原文（原文版权归其作者，按各自许可分发）。
+
+
+## 逐文件归属（深审计实测，2026-11-22）
+
+用「最长公共 token 串」比对 369 个自有文件与 791 个第三方文件，≥60 tokens 的只有 7 个：
+
+| 自有文件 | 最长公共串 | 来源 | 许可 | 处置 |
+|---|---|---|---|---|
+| `tools/oly_container.py` | 2092 | `fishcu/oly_fw_analysis` `tools/oly_container.py` | Apache-2.0 | 已加源码头注释，保留 NOTICE |
+| `tools/omemu_winfix.py` | 158 | `om-emu` `emu/bin/modelcheck.mjs` | MIT | 保留 MIT 许可文本（见下） |
+| `tools/em10_run.py` | 63 | `om-emu` `emu/bin/regs.mjs` | MIT | 同上 |
+| `tools/verify_b32_chain.py` | 64 | 同上 | MIT | 同上 |
+| `tools/verify_b37_chain.py` | 64 | 同上 | MIT | 同上 |
+| `tools/watch_field.py` | 63 | 同上 | MIT | 同上 |
+| 其余 | <60 | — | — | 仅共享词汇 |
+
+`docs/refs/*.md` 与上游文档的**逐字重合词数为 0**（全部为重写摘要）。
+
+### MIT 许可全文（`om-emu`）
+
+```
+MIT License
+
+Copyright (c) flatpanda
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
+
+## 声明
+
+本项目与上述任何厂商无关联，未获其授权或认可。商标仅作指代性描述。完整声明见 `README.md` 顶部。

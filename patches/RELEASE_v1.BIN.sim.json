@@ -1,0 +1,6 @@
+{
+ "verifier": "verify_release.py",
+ "sha256": "0b08a232cee544c5724e8ed661fcad97d75d1e9f9886229c30ea01d2280cafad",
+ "closed": true,
+ "scope": "静态：从 stock 起的全量字节白名单 + tone/矩阵/色度与 L55 一致 + UI 名存在；无 ISP 仿真"
+}
