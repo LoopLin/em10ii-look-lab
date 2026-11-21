@@ -22,9 +22,11 @@
 
 ### 2.1 与 GPL-3.0 来源（cmdada/em10-fw）
 
-最高相似度 **0.005**（`tools/mn10300_dis.py` vs `emu_isa_mn10300.igen`），全部 ≤0.005，属"共享指令名"级别的噪声。
+文本相似度最高 **0.005**（`tools/mn10300_dis.py` vs `emu_isa_mn10300.igen`）。
 
-**结论：没有复制 GPL 代码。** ⇒ GPL 的传染性不成立。
+但**指令表是解析生成的**：`tools/mn10300_dis.py` 的 `load_igen_text()` 读取 `mn10300.igen`，按该仓库 `emu/gen.py` 的格式语法解析出 687 条规则——这属于**数据衍生**，不是"共享指令名"级别的噪声。`mn10300.igen` 原属 GDB/gnu sim（GPL-3.0），经 `cmdada/em10-fw` vendored（同样 GPL-3.0）。
+
+**结论：存在 GPL-3.0 数据衍生**（指令表），但本项目最终选择 GPL-3.0，方向兼容；无需移除，已在 `NOTICE` 注明来源。
 
 ### 2.2 与 Apache-2.0 / MIT 来源
 
