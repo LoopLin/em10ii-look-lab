@@ -75,7 +75,7 @@
 
 1. `python tools/license_audit.py` → 无 >0.15 新条目；
 2. `python tools/scrub_release.py` 逐份处理白名单文档 → 解析类词 0、个人路径 0、长 hex 0；
-3. `LICENSE` = Apache-2.0 全文，`NOTICE` = 五条；
+3. `LICENSE` = GPL-3.0 全文，`NOTICE` = 五条；
 4. README 顶部声明 + 四条已知限制；
 5. 目标目录 `du -sh` < 80 MB，零 `*.BIN/*.ORF/*.JPG/*.cube`。
 
@@ -83,9 +83,10 @@
 
 ## 6. 协议最终决定
 
-- **代码 / 工具 / 补丁：Apache License 2.0**
+- **代码 / 工具 / 补丁：GNU General Public License v3.0**
 - **文档：CC BY 4.0**
-- 原因：唯一衍生物来自 Apache-2.0（fishcu），同许可发布最干净；无 GPL 代码；专利授权与 NOTICE 机制都具备。
+- 审计结论：无 GPL 代码；唯一衍生物来自 Apache-2.0（fishcu），Apache→GPL 单向兼容，保留其署名与 NOTICE。
+- 决定过程：2026-11-22 先按「同许可最省事」改为 Apache-2.0；同日用户决定改回 GPL-3.0（理由：希望衍生作品保持开源）。技术上两者都可行，最终以 GPL-3.0 发布。
 
 ## 代码来源深审计（2026-11-22，`tools/legal_audit_deep.py` 实测）
 
