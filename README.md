@@ -34,6 +34,22 @@
 - `SAFETY.md` —— 上机前必须读：适用机型、变砖风险、恢复步骤。
 - `docs/firmware/PACKAGES.md` —— 每个包改了什么、成没成、为什么败。
 
+## 目录速览
+
+| 路径 | 里面是什么 |
+| :-- | :-- |
+| `patches/` | 补丁定义（`RELEASE_v1.patch` + 产物 sha 记录）。几 KB，纯文本；应用到官方包上得到成品。 |
+| `tools/` | 构建与核验脚本。最常看三个：`mkpatch.py`（应用补丁）、`build_release.py`（从 stock 一次组装）、`verify_release.py`（白名单审计，改动必须全在允许区间）。 |
+| `docs/INDEX.md` | **文档入口**，按「现行 / 历史 / 冻结」分层。 |
+| `docs/STATUS.md` | **唯一真相源**：目标、真机已验证、已判死、当前数值、卡上现状、开放问题。 |
+| `docs/WORK-LAW.md` | 方法红线：反汇编 → 代码地图 → 模拟器（带 `--patch`）→ 五道门 → 一包一问。 |
+| `docs/map/` | 代码地图：函数入口、ctx 结构、覆盖率、死区、未执行页。 |
+| `docs/analysis/` | 分析记录与法律审计（许可来源、先例对照、SD 文件 API、验收）。 |
+| `docs/firmware/` | 包账本（`PACKAGES.md`）与刷机日志（`FLASH-LOG.md`）。 |
+| `docs/refs/` | 两个先例项目的**摘要**（Caduceus / PEN-F 分析），不是原文。 |
+| `assets/` | 自制的色卡与灰阶 ramp 图，用于验收对比；不含任何实拍照片。 |
+| 根目录 | `README`（本文件）、`SAFETY`（恢复步骤）、`QUICKSTART`（五步打补丁）、`LOOKS`（四款外观说明）、`LICENSE`（GPL-3.0）、`NOTICE`（第三方署名）、`AI-DISCLOSURE`（AI 参与方式）。 |
+
 ## 已知限制（三条）
 
 先说结论：**四档里 V、N 两档在真机上达标；M、P 两档有已知偏差。**

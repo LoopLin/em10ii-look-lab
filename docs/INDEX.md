@@ -4,7 +4,13 @@
 > 任何文档与 `STATUS.md` 冲突，以 `STATUS.md` 为准；旧文档顶部若带 `🗄 已冻结`，说明它只作历史，不要引用其中的结论。
 > 读完 `STATUS.md` 再读它 §9 列的几份只读参考，其它都可以不看。
 
+
+> **S5 收尾补记（2026-11-22 晚）**：新增/更新了 `docs/map/function-coverage.md`、`docs/map/zero-run-candidates.md`、`docs/map/ctx-schema.md`（+`.json`）、`docs/firmware/CAPABILITIES.md`、`docs/analysis/preview-flatten.md`；门从四道变五道 + 能力回归（见 `docs/WORK-LAW.md` §1/§5.3）；A1 桩位定为 `0x605F2600`。
+
 ## 现行（准确、可依赖）
+
+- `WORK-LAW.md` —— **工作律（最高优先）**：反汇编 → 代码地图 → 模拟器（带 `--patch`）→ 五道门 → 一包一问
+- `ROADMAP-longterm.md` —— **路线图 A–F**（价值×成本与推荐顺序）
 
 - `STATUS.md` —— **唯一真相源**：目标 / 硬规定 / 真机已验证 / 已判死 / 当前数值 / 卡上现状 / 墓碑 / 开放问题
 - `METHOD-efficiency.md` —— 四道门、直接写卡规则、效率纪律
@@ -154,7 +160,7 @@
 `docs/archive/overview.md`、`docs/archive/state-2026-11-11.md`、`docs/archive/tech-story.md` —— 早期总览与流水账，仅备查 🗄。
 | `docs/plans/done/PLAN-next-2026-11-15.md` | 三个堵点的裁决 + 出包前真机验证清单 | 🎯 当前 |
 | `docs/firmware/PACKAGES.md` | **包台账**：A 段 27 条有结论的包（改了什么/验什么/成败/原因），B 段 FLASH-LOG 全量流水 |
-| `docs/ROADMAP-longterm.md` | **长期计划**（E-P7 借鉴的四项：SD 文件 API / 构建后 hook / 写卡诊断 / 12 区 HSL），不阻塞正式版 |
+| `docs/ROADMAP-longterm.md` | **路线图 A–F**（SD 文件 API / 构建后 hook / 写卡诊断 / 12 区 HSL / 多套预设切换 / 证据与回归），带价值×成本与推荐顺序 |
 | `docs/analysis/infra-plan.md` | **基础设施方案（地基）**：CONFIG.BIN/DIAG.BIN 格式、启动读取、构建后挂载、显示侧单独修、M1–M4 里程碑与风险表 |
 | `docs/reports/2026-11-22.md` | **日报**：今日完成（RELEASE_v1 / N 修复 / 预览链 / 台账 / 地基）、浪费统计、明日 P0–P5 计划 |
 | `docs/refs/caduceus-e-p7.md` | 先例：Caduceus E-P7 的通读笔记（hook 纪律、SD 文件 API、display-only、grain 挂成片后） |
