@@ -14,6 +14,13 @@
 
 ---
 
+> ### 2026-11-24 发行说明
+>
+> **发行物没有变**：仍是 `patches/RELEASE_v1.patch`，成品 sha `0b08a232…cafad`；本仓库不包含任何 `*.BIN`。
+> P4.0 的 N `k=0` 实验、P4.1 的卡上 LOOKS loader 都**没有并入发行补丁**；loader 已冻结。
+> 本发行版工具集是 2026-11-22 快照（写卡入口 `tools/flash_gate.py`）；工作区的五道门脚本没有随发行版发布。
+> 详细说明见 `docs/RELEASE-NOTES-2026-11-24.md`。
+
 ## 1. 目标
 
 把 Olympus E-M10 II（E120，v1.4）的四档影像风格替换成四款胶片模拟，并做到**全部打通才出正式版**：
@@ -32,8 +39,8 @@
 ## 2. 硬规定（每条都付过代价）
 
 1. **一包一根**：所有包只从 `<official-firmware>.BIN`（sha `ff9d3023…`）起，不在上一版上改。
-2. **四道门**：`audit_beta_pack.py` → `patch_check.py --reach` → libsim（`verify_l*.py`，`closed:true`）→ `second_verify.py --base stock`。四道全过才许上卡。
-3. **写卡只走** `tools/flash_gate.py`；卡上永远保留官方 `<firmware>.BIN`，测试包一律 `<firmware>.BIN`。
+2. **四道门（本发行版快照）**：`audit_beta_pack.py` → `patch_check.py --reach` → libsim（`verify_l*.py`，`closed:true`）→ `second_verify.py --base stock`。四道全过才许上卡。工作区现行纪律另含模型门、`check_stub_region` 与 `verify_caps` 能力回归；这些脚本未随本发行版发布。
+3. **写卡只走** `tools/flash_gate.py`（发行版快照）；卡上永远保留官方 `<firmware>.BIN`，测试包一律 `<firmware>.BIN`。工作区的 `tools/flash.py` 是串模型门/刷卡账的封装，未随本发行版发布。
 4. **复审+审计后可直接写卡**（用户 2026-11-21 定）；不再逐包请示。
 5. **地址换算唯一**：`RAM = 0x60021020 + payload_index`；`container_offset = 32 + (RAM − 0x60021020)`。
 6. **每个结论标证据等级**；"模拟通过" ≠ 真机闭环。
@@ -67,7 +74,7 @@
 - 用户在 L55 上目测：**OLED 预览与直出 JPEG 只剩细微差别**（不再有色调/饱和度的明显分歧）。
 - 证据等级：**真机（用户目测）**，不是像素级比对；正式验收仍以 `docs/analysis/acceptance-22.md` 的"预览 vs 成片同框"一项为准。
 - 机制侧已知：预览走 `0x6046EDC0 → 0x6046EAAF` 兜底，会完整跑一遍模式应用（tone/矩阵/色度都吃我们改的数据），所以“预览跟着变”是必然；**我们没有为预览单独打补丁**。
-- 残余的"细微差别"最可能来自显示侧（屏幕亮度/色温与 JPEG 编码之后的一级处理），不是我们链路上的偏差；此判断为**推理**，未验证。
+- **2026-11-24 更新**：CPU→ISP 路径中没有显示专用 gamma / 3D LUT / 环境光增益；残余差异来自 look 曲线块的两条装配路径，以及 LV 帧未清零的五拨盘弯曲。仍不是像素级一致；不再为预览单独刷机。
 
 ## 4. 已判死（不要再试）
 
