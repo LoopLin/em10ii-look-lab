@@ -12,6 +12,7 @@
 - `WORK-LAW.md` —— **工作律（最高优先）**：反汇编 → 代码地图 → 模拟器（带 `--patch`）→ 五道门 → 一包一问
 - `ROADMAP-longterm.md` —— **路线图 A–F**（价值×成本与推荐顺序）
 - `RELEASE-NOTES-2026-11-24.md` —— **本次发行说明**：发行物仍为 RELEASE_v1；P4.0/P4.1 未并入；loader 冻结；工具集为 11-22 快照
+- `../research/INDEX.md` —— **研究笔记**：10 篇失败/决策记录（M1/M1b、预览、HSL、loader、半按、门禁、N k 值、LOOKS、门 A、HSL 表）；先看这层，不要当教程
 
 - `STATUS.md` —— **唯一真相源**：目标 / 硬规定 / 真机已验证 / 已判死 / 当前数值 / 卡上现状 / 墓碑 / 开放问题
 - `METHOD-efficiency.md` —— 四道门、直接写卡规则、效率纪律

@@ -36,6 +36,15 @@
 - 工作区后来新增的 `model_gate.py`、`cards.py`、`flash.py`、`check_stub_region.py`、`verify_caps.py` **没有随本发行版发布**。
 - `docs/WORK-LAW.md` 里的“模型门 + 五道门 + 能力回归”是**开发工作区纪律**；本发行版只带四道门快照。不要把发行版缺脚本理解为纪律被取消。
 
+## 研究笔记
+
+本仓库新增 `research/` 子目录，放 10 篇失败与决策记录，不是教程：
+
+- `research/INDEX.md` —— 入口、发布边界、读法
+- 01 M1/M1b 重启、02 预览偏平、03 HSL 标准档、04 LOOKS loader 冻结、05 半按入口、06 五道门与证据、07 N 档 EXIF `k`、08 LOOKS 格式、09 门 A 真机证据、10 HSL 3028 B 表
+
+这些笔记只写问题、假设、方法、地址、证据等级、失败与被推翻的结论；不包含固件、成品 BIN、实拍照片、个人路径、商业 LUT 或未证推断。
+
 ## 已验证
 
 - 用发行版自带的 `tools/mkpatch.py`，对官方 `E120 1400 0000 0000` 重放 `RELEASE_v1.patch`，输出 sha256 与上面成品 sha 一致。

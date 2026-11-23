@@ -37,11 +37,12 @@
 ## 先读这几份
 
 - `LOOKS.md` —— 四款外观**实际长什么样、适合什么场景**，以及为什么菜单里保留业界通用的风格名。
+- `research/INDEX.md` —— **研究笔记**：失败与决策记录（M1/M1b、预览、HSL、loader、半按、门禁、N k 值、LOOKS、门 A、HSL 表）；不是教程。
 - `AI-DISCLOSURE.md` —— 本项目哪些部分由 AI 辅助生成，证据等级如何读。
 - `SAFETY.md` —— 上机前必须读：适用机型、变砖风险、恢复步骤。
 - `docs/firmware/PACKAGES.md` —— 每个包改了什么、成没成、为什么败。
 
-> 工具集说明：本仓库是 **2026-11-22 快照**，`tools/` 里带的是发布所需的最小集合（写卡入口 `tools/flash_gate.py`）。工作区后来新增的 `model_gate.py`、`cards.py`、`flash.py`、`check_stub_region.py`、`verify_caps.py` 没有随本发行版发布；`docs/WORK-LAW.md` 的五道门是开发工作区纪律，不是本快照的工具清单。
+> 工具集说明：本仓库是 **2026-11-22 快照**，`tools/` 是当时完整的 369 个脚本快照，不是“最小集合”（写卡入口 `tools/flash_gate.py`）。工作区后来新增的 `model_gate.py`、`cards.py`、`flash.py`、`check_stub_region.py`、`verify_caps.py` 没有随本发行版发布；`docs/WORK-LAW.md` 的五道门是开发工作区纪律，不是本快照的工具清单。
 
 ## 目录速览
 
@@ -56,6 +57,7 @@
 | `docs/analysis/` | 分析记录与法律审计（许可来源、先例对照、SD 文件 API、验收）。 |
 | `docs/firmware/` | 包账本（`PACKAGES.md`）与刷机日志（`FLASH-LOG.md`）。 |
 | `docs/refs/` | 两个先例项目的**摘要**（Caduceus / PEN-F 分析），不是原文。 |
+| `research/` | **研究笔记**：10 篇失败与决策记录（不是教程、不是固件）。入口 `research/INDEX.md`。 |
 | `assets/` | 自制的色卡与灰阶 ramp 图，用于验收对比；不含任何实拍照片。 |
 | 根目录 | `README`（本文件）、`SAFETY`（恢复步骤）、`QUICKSTART`（五步打补丁）、`LOOKS`（四款外观说明）、`LICENSE`（GPL-3.0）、`NOTICE`（第三方署名）、`AI-DISCLOSURE`（AI 参与方式）。 |
 
