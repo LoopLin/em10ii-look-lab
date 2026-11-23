@@ -6,7 +6,7 @@
 
 ## 问题
 
-目标：不重刷固件，从卡上读 `LOOKS*.BIN`，换 look / 换家族。  
+目标：不重刷固件，从卡上读 `LOOKS*.BIN`，换 look / 换家族。
 听上去只是“读一个文件”，实际卡在“什么时候读才安全”。
 
 ## 原来的判断
@@ -78,6 +78,6 @@
 ## 相关
 
 - `docs/SIDE-PLAN.md`（工作区，不随发行版）
-- `docs/RELEASE-NOTES-2026-11-24.md`
+- `docs/releases/2026-11-24.md`
 - `research/05-half-press-entry.md`
 - `research/08-looks-format-family.md`

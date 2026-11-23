@@ -10,7 +10,7 @@ HSL 的 3,028 B 参数块里到底有什么？12 个“区”是不是 12 条独
 
 ## 原来的判断
 
-早期把它当成“12 区 HSL，每区一条曲线”，并试图直接填 12×N 条记录。  
+早期把它当成“12 区 HSL，每区一条曲线”，并试图直接填 12×N 条记录。
 实际结构不是这样。
 
 ## 结果
@@ -95,4 +95,4 @@ HSL 的 3,028 B 参数块里到底有什么？12 个“区”是不是 12 条独
 
 - `research/03-hsl-standard-mode.md`
 - `research/06-gates-and-evidence.md`
-- `docs/RELEASE-NOTES-2026-11-24.md`
+- `docs/releases/2026-11-24.md`

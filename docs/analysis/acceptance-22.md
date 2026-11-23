@@ -38,7 +38,7 @@
 2. **量化**：`tools/compare_baseline.py <四张编号>` 出「新拍 / 原厂 / 参考 look 目标」三列，看灰阶六格残差；
 3. **记档**：每个场景一行写进 `docs/analysis/acceptance-22.md`（本文件下方表格追加）。
 
-判据（沿用 `docs/RELEASE-CHECKLIST.md`）：
+判据（沿用 `docs/release/RELEASE-CHECKLIST.md`）：
 - 灰阶每格残差 ≤ **10 码**（V/N 应 ≤6）；
 - 无整片偏色（白墙/灰卡不偏）；
 - 高光不整块死白、暗部不整块死黑；

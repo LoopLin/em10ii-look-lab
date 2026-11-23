@@ -60,4 +60,4 @@ M1b 的桩只有 70 B，被当成“marker / 占位”，M1 是 880 B 完整桩�
 
 - `docs/STATUS.md` 段表/装载顺序
 - `docs/WORK-LAW.md` 地址四性质
-- `docs/RELEASE-NOTES-2026-11-24.md`：发行版不含这些实验包
+- `docs/releases/2026-11-24.md`：发行版不含这些实验包

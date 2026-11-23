@@ -3,7 +3,7 @@
 > **这份文件只讲"现在是什么样"。**
 > 历史怎么走到这里，不写在这里；旧文档一律冻结（顶部有 `🗄 已冻结` 标记），只作史料。
 > 改结论 = 改这份文件 + 在 §7 留一行墓碑。生效日期：**2026-11-21**。
-> 证据等级：真机 / 模拟 / 静态 / 推理（规则见 `EVIDENCE-RULES.md`）。
+> 证据等级：真机 / 模拟 / 静态 / 推理（规则见 `research/06-gates-and-evidence.md`）。
 
 > ### ⛔ 工作律（2026-11-22 立，优先级最高）
 > **先看懂代码，再写代码；先上模拟器，再上相机。**
@@ -19,7 +19,7 @@
 > **发行物没有变**：仍是 `patches/RELEASE_v1.patch`，成品 sha `0b08a232…cafad`；本仓库不包含任何 `*.BIN`。
 > P4.0 的 N `k=0` 实验、P4.1 的卡上 LOOKS loader 都**没有并入发行补丁**；loader 已冻结。
 > 本发行版工具集是 2026-11-22 快照（写卡入口 `tools/flash_gate.py`）；工作区的五道门脚本没有随发行版发布。
-> 详细说明见 `docs/RELEASE-NOTES-2026-11-24.md`。
+> 详细说明见 `docs/releases/2026-11-24.md`。
 
 ## 1. 目标
 
@@ -197,13 +197,12 @@
 
 ## 9. 只读参考（这几份仍然准确）
 
-- `EVIDENCE-RULES.md` —— 证据分级判据（含"预览≠成片"）
+- `docs/README.md` —— 发行树文档入口
 - `METHOD-efficiency.md` —— 四道门、直接写卡规则、效率纪律
-- `map/dead-zones.md` —— 四个"看着是空、其实会炸"的区域
-- `HANDOFF-S4.md` —— **技术底稿**（地址表 / 容器格式 / 通道清单）；其"现状"部分已失效
-- `firmware/successes/README.md`、`firmware/failures/README.md` —— 包的历史账本
-- `color/INDEX.md`、`map/INDEX.md` —— 结构图与色彩文档的分组索引
+- `research/06-gates-and-evidence.md` —— 证据分级判据（含"预览≠成片"）
+- `analysis/m1-probe.md`、`analysis/acceptance-22.md` —— 事故与验收记录
+- `firmware/PACKAGES.md` —— 包的历史账本
+- `map/preview-chain.md`、`color/hw-calibration-2026-11-21.md` —— 选留的链路图与色彩记录
 
-其余（`STATUS-2026-11-*`、`HANDOFF-S1..S5`、`PLAN-*`、`SUMMARY*`、`s??` 实验记录）**已冻结**，只作历史。
-
-> 包级历史见 `docs/firmware/PACKAGES.md`（A 段结论表 + B 段流水）；基准对比用 `tools/compare_baseline.py`（新拍 / 原厂四档 / 参考 look 目标 三列）。
+> `HANDOFF-S4.md`、`HANDOFF-S5.md`、`STATUS-2026-11-*`、`SUMMARY*`、`s??` 实验记录、`reports/` 均不在发行树中；它们只作工作区/git 历史，不随发行版发布。
+> 包级历史见 `docs/firmware/PACKAGES.md`（A 段结论表 + B 段流水）。

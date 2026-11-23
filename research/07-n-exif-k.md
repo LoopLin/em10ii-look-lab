@@ -43,7 +43,7 @@ mov d0,(a0)
 jmp 0x604B8124
 ```
 
-也就是：key==2 时把 stash 清 0。  
+也就是：key==2 时把 stash 清 0。
 N 的真 key 很可能是 2，但到 SU 桩时读到的已经是 0。
 
 ### 3. RELEASE_v1 跳过无效 k
@@ -54,7 +54,7 @@ SU 桩算：
 k = ((key>>24)&3)<<3 | (key&7)
 ```
 
-`k=0` 时 `k-1` 无符号 >3，跳过写 EXIF。  
+`k=0` 时 `k-1` 无符号 >3，跳过写 EXIF。
 所以旧 N 照片里看到的 `k=1` 是**上一张的旧值**，不是 N 算出来的 1。
 
 ### 4. P40b 真机
@@ -92,4 +92,4 @@ P40b 在 SU 汇合点读 stash 并写 EXIF：
 ## 相关
 
 - `research/04-looks-loader-freeze.md`（loader 冻结后的主线）
-- `docs/RELEASE-NOTES-2026-11-24.md`
+- `docs/releases/2026-11-24.md`

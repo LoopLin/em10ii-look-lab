@@ -78,6 +78,6 @@ LV 路径：`0x6046AAB6 → 0x6046E9B5 → 0x6046EDC0 → 0x6046EAAF`。它**完
 
 ## 相关
 
-- `docs/RELEASE-NOTES-2026-11-24.md`
+- `docs/releases/2026-11-24.md`
 - `docs/STATUS.md` §3.x
 - `docs/WORK-LAW.md` 证据分级

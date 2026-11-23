@@ -67,4 +67,4 @@ P0S-0B 包在 `0x60180164` 记录 `d0`：
 ## 相关
 
 - `research/04-looks-loader-freeze.md`
-- `docs/RELEASE-NOTES-2026-11-24.md`
+- `docs/releases/2026-11-24.md`

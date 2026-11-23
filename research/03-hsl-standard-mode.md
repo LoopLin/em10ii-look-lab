@@ -93,6 +93,6 @@
 
 ## 相关
 
-- `docs/RELEASE-NOTES-2026-11-24.md`
+- `docs/releases/2026-11-24.md`
 - `docs/STATUS.md` §4 判死清单
 - `research/10-hsl-table-format.md`

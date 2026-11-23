@@ -16,8 +16,8 @@
 >
 > 发行物没有变：仍是 `patches/RELEASE_v1.patch`（成品 sha `0b08a232…cafad`），本仓库不包含任何 `*.BIN`。
 > P4.0 的 N `k=0` 实验、P4.1 的卡上 LOOKS loader 都**没有并入发行补丁**；loader 已冻结。
-> 本仓库是 2026-11-22 工具快照；工作区新增的模型门/刷卡账/桩位/能力回归脚本没有随发行版发布。
-> 详细说明见 `docs/RELEASE-NOTES-2026-11-24.md`。
+> 本仓库是 2026-11-24 结构整理后的快照；`tools/` 只保留 12 个正式入口，历史脚本不随发行版发布。工作区新增的模型门/刷卡账/桩位/能力回归脚本没有随发行版发布。
+> 详细说明见 `docs/releases/2026-11-24.md`。
 
 ## ⚠️ 上机前先看这四条（别踩坑）
 
@@ -42,24 +42,26 @@
 - `SAFETY.md` —— 上机前必须读：适用机型、变砖风险、恢复步骤。
 - `docs/firmware/PACKAGES.md` —— 每个包改了什么、成没成、为什么败。
 
-> 工具集说明：本仓库是 **2026-11-22 快照**，`tools/` 是当时完整的 369 个脚本快照，不是“最小集合”（写卡入口 `tools/flash_gate.py`）。工作区后来新增的 `model_gate.py`、`cards.py`、`flash.py`、`check_stub_region.py`、`verify_caps.py` 没有随本发行版发布；`docs/WORK-LAW.md` 的五道门是开发工作区纪律，不是本快照的工具清单。
+> 工具集说明：本仓库是 **2026-11-24 结构整理后的快照**，`tools/` 只保留 **12 个正式入口**（写卡入口 `tools/flash_gate.py`）。2026-11-24 前的 357 个历史构建/探针脚本不随发行版发布，需要时从 git 历史或工作区取；`docs/WORK-LAW.md` 的五道门是开发工作区纪律，不是本快照的工具清单。
 
 ## 目录速览
 
 | 路径 | 里面是什么 |
 | :-- | :-- |
 | `patches/` | 补丁定义（`RELEASE_v1.patch` + 产物 sha 记录）。几 KB，纯文本；应用到官方包上得到成品。 |
-| `tools/` | 构建与核验脚本。最常看三个：`mkpatch.py`（应用补丁）、`build_release.py`（从 stock 一次组装）、`verify_release.py`（白名单审计，改动必须全在允许区间）。 |
-| `docs/INDEX.md` | **文档入口**，按「现行 / 历史 / 冻结」分层。 |
+| `tools/` | 12 个正式入口 + `README.md`；先看 `tools/README.md`。 |
+| `docs/README.md` | **唯一文档入口**；按「用户 / 发行 / 技术 / 历史」分层。 |
 | `docs/STATUS.md` | **唯一真相源**：目标、真机已验证、已判死、当前数值、卡上现状、开放问题。 |
 | `docs/WORK-LAW.md` | 方法红线：反汇编 → 代码地图 → 模拟器（带 `--patch`）→ 五道门 → 一包一问。 |
-| `docs/map/` | 代码地图：函数入口、ctx 结构、覆盖率、死区、未执行页。 |
-| `docs/analysis/` | 分析记录与法律审计（许可来源、先例对照、SD 文件 API、验收）。 |
+| `docs/release/` | 发布规则、验收清单、历史打包报告。 |
+| `docs/releases/` | 按日期归档的发行说明；最新是 `2026-11-24.md`。 |
+| `docs/analysis/` | 选留的分析（许可来源、先例对照、SD 文件 API、验收）。 |
 | `docs/firmware/` | 包账本（`PACKAGES.md`）与刷机日志（`FLASH-LOG.md`）。 |
 | `docs/refs/` | 两个先例项目的**摘要**（Caduceus / PEN-F 分析），不是原文。 |
+| `docs/dev/` | 历史开发资料（不随发行流程更新）。 |
 | `research/` | **研究笔记**：10 篇失败与决策记录（不是教程、不是固件）。入口 `research/INDEX.md`。 |
 | `assets/` | 自制的色卡与灰阶 ramp 图，用于验收对比；不含任何实拍照片。 |
-| 根目录 | `README`（本文件）、`SAFETY`（恢复步骤）、`QUICKSTART`（五步打补丁）、`LOOKS`（四款外观说明）、`LICENSE`（GPL-3.0）、`NOTICE`（第三方署名）、`AI-DISCLOSURE`（AI 参与方式）。 |
+| 根目录 | `README`、`SAFETY`、`QUICKSTART`、`LOOKS`、`LICENSE`、`NOTICE`、`AI-DISCLOSURE`。 |
 
 ## 已知限制（三条）
 
@@ -71,7 +73,7 @@
 
 另外 V 档的色度退饱和（L62）在真机上会把整片拉绿，已回滚；V 的色度偏差 5.82 ΔE00 属于上面第 3 条的范围。
 
-这些限制在 `docs/STATUS.md` §3、`docs/reports/2026-11-22.md` 里有逐项的真机数值，`docs/analysis/chroma-limits.md`、`docs/analysis/preview-fix.md` 有成因分析。**不承诺「完美复刻」，也不支持 E-M10 系列的其它机型。**
+这些限制在 `docs/STATUS.md` §3、`docs/analysis/acceptance-22.md` 里有逐项的真机数值，`research/02-preview-flatten.md` 有预览成因分析。**不承诺「完美复刻」，也不支持 E-M10 系列的其它机型。**
 
 ## 怎么用
 
@@ -93,24 +95,30 @@ python tools/mkpatch.py OLY_E_120_1400_0000_0000.BIN \
 ├── README.md            本文件
 ├── LICENSE              GPL-3.0 全文
 ├── NOTICE               第三方出处与许可
+├── AI-DISCLOSURE.md     AI 参与方式、证据等级
 ├── SAFETY.md            机型限定、变砖风险、恢复步骤
 ├── QUICKSTART.md        五步上手（自备官方包 → 校验 → 打补丁 → 拷卡 → 验证）
+├── LOOKS.md             四款外观与适用场景
 ├── .gitignore           固件/照片/LUT 一律不入库
-├── patches/             RELEASE_v1.patch（唯一发布补丁）+ 其静态校验记录
+├── patches/             RELEASE_v1.patch（唯一发布补丁）+ 静态校验记录
 ├── assets/              自制测试图（色卡、ramp），无第三方素材
-├── tools/               构建、补丁、校验、分析脚本（盘符已参数化）
+├── tools/               12 个正式入口 + README
+├── research/            研究笔记 INDEX + 10 篇
 └── docs/
+    ├── README.md        唯一文档入口
+    ├── INDEX.md         旧入口，只做跳转
     ├── STATUS.md        现行权威状态（真机验证表）
-    ├── INDEX.md         文档索引
+    ├── WORK-LAW.md      方法红线
+    ├── ROADMAP-longterm.md    长期路线（不是已发布能力）
     ├── METHOD-efficiency.md   方法学：怎么用最少次数定位参数
-    ├── EVIDENCE-RULES.md      证据分级规则
-    ├── UPLOAD-CHECKLIST.md    发布前审计清单（本包的生成依据）
-    ├── RELEASE-CHECKLIST.md   发布流程
-    ├── ROADMAP-longterm.md    长期路线
-    ├── firmware/PACKAGES.md   固件包台账（只留 sha256 与结论）
-    ├── analysis/        24 篇分析：影调、矩阵、色度、预览、SD 文件 API、先例映射
+    ├── release/         发布规则、验收清单、历史打包报告
+    ├── releases/        按日期归档的发行说明
+    ├── analysis/        选留的分析
+    ├── color/           色彩校准记录
+    ├── firmware/        PACKAGES.md / FLASH-LOG.md
+    ├── map/             精选链路图
     ├── refs/            两份先例摘要（引用片段每份 ≤30 行）
-    └── reports/         工作日报
+    └── dev/             历史开发资料
 ```
 
 ## 许可

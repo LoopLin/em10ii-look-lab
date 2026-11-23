@@ -95,11 +95,11 @@ LOOKS2.BIN      2,880 B，家族 2
 
 ## 为什么冻结
 
-T0bA 在 JPEG 写卡事务里读 1.8 KB 并写 tone，真机重启；loader 冻结。  
+T0bA 在 JPEG 写卡事务里读 1.8 KB 并写 tone，真机重启；loader 冻结。
 格式本身不背这个锅，是“读卡时机”失败。
 
 ## 相关
 
 - `research/04-looks-loader-freeze.md`
 - `research/10-hsl-table-format.md`
-- `docs/RELEASE-NOTES-2026-11-24.md`
+- `docs/releases/2026-11-24.md`
