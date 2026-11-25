@@ -66,6 +66,16 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
 
+
+## 方法参考（未复制代码）
+
+以下项目只用于方法、数据结构、测试纪律或产品形态参考，**未整段复制其源码/文档**；具体“参考了什么、没有拿什么”见 `ACKNOWLEDGEMENTS.md`。
+
+- `atx/fenykl` —— <https://github.com/atx/fenykl>：同机型 loader/插件生命周期、R/B swap 的矩阵重指与恢复边界。许可未在本仓库核实，使用前需向作者确认。
+- `Meghnus/oly-truepic-harness` —— <https://github.com/Meghnus/oly-truepic-harness>：负控、lock-step 对拍、lane 等测试方法。
+- `Meghnus/om10mi-mods` —— <https://github.com/Meghnus/om10mi-mods>：Color Creator 的 HSL 产品形态、Color Wheel 交互、矩阵 + tone 曲线拟合路线；未复制其代码、UI 或槽位布局。
+- `meukmachine/em10_mk1` —— <https://github.com/meukmachine/em10_mk1>：资料索引。
+
 ## 声明
 
 本项目与上述任何厂商无关联，未获其授权或认可。商标仅作指代性描述。完整声明见 `README.md` 顶部。

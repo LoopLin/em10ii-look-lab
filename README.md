@@ -19,6 +19,12 @@
 > 本仓库是 2026-11-24 结构整理后的快照；`tools/` 只保留 12 个正式入口，历史脚本不随发行版发布。工作区新增的模型门/刷卡账/桩位/能力回归脚本没有随发行版发布。
 > 详细说明见 `docs/releases/2026-11-24.md`。
 
+> **2026-11-26 研究快照**
+>
+> 发行物仍未变；本轮只更新研究结论，没有新 BIN。标准档 HSL 的瓶颈已收窄为“页选择 + 拍摄帧判别”，四槽对象 FAIL、A′ boot loop、B0-P1 的 H1 不是 ART 载体；B3 只做了设计。
+> 参考过的公开项目与“没有拿什么”见 `ACKNOWLEDGEMENTS.md`。
+> 详细说明见 `docs/releases/2026-11-26.md`。
+
 ## ⚠️ 上机前先看这四条（别踩坑）
 
 1. **只适用于 Olympus E-M10 II，固件必须是 `E120 1400 0000 0000`**，别的机型/版本刷了大概率变砖。
@@ -39,6 +45,7 @@
 - `LOOKS.md` —— 四款外观**实际长什么样、适合什么场景**，以及为什么菜单里保留业界通用的风格名。
 - `research/INDEX.md` —— **研究笔记**：失败与决策记录（M1/M1b、预览、HSL、loader、半按、门禁、N k 值、LOOKS、门 A、HSL 表）；不是教程。
 - `AI-DISCLOSURE.md` —— 本项目哪些部分由 AI 辅助生成，证据等级如何读。
+- `ACKNOWLEDGEMENTS.md` —— 参考过的公开项目、参考了什么、没有拿什么（含跨机型“不要搬”清单）。
 - `SAFETY.md` —— 上机前必须读：适用机型、变砖风险、恢复步骤。
 - `docs/firmware/PACKAGES.md` —— 每个包改了什么、成没成、为什么败。
 
@@ -54,14 +61,14 @@
 | `docs/STATUS.md` | **唯一真相源**：目标、真机已验证、已判死、当前数值、卡上现状、开放问题。 |
 | `docs/WORK-LAW.md` | 方法红线：反汇编 → 代码地图 → 模拟器（带 `--patch`）→ 五道门 → 一包一问。 |
 | `docs/release/` | 发布规则、验收清单、历史打包报告。 |
-| `docs/releases/` | 按日期归档的发行说明；最新是 `2026-11-24.md`。 |
+| `docs/releases/` | 按日期归档的发行说明；最新是 `2026-11-26.md`。 |
 | `docs/analysis/` | 选留的分析（许可来源、先例对照、SD 文件 API、验收）。 |
 | `docs/firmware/` | 包账本（`PACKAGES.md`）与刷机日志（`FLASH-LOG.md`）。 |
 | `docs/refs/` | 两个先例项目的**摘要**（Caduceus / PEN-F 分析），不是原文。 |
 | `docs/dev/` | 历史开发资料（不随发行流程更新）。 |
-| `research/` | **研究笔记**：10 篇失败与决策记录（不是教程、不是固件）。入口 `research/INDEX.md`。 |
+| `research/` | **研究笔记**：11 篇失败与决策记录（不是教程、不是固件）。入口 `research/INDEX.md`。 |
 | `assets/` | 自制的色卡与灰阶 ramp 图，用于验收对比；不含任何实拍照片。 |
-| 根目录 | `README`、`SAFETY`、`QUICKSTART`、`LOOKS`、`LICENSE`、`NOTICE`、`AI-DISCLOSURE`。 |
+| 根目录 | `README`、`SAFETY`、`QUICKSTART`、`LOOKS`、`LICENSE`、`NOTICE`、`AI-DISCLOSURE`、`ACKNOWLEDGEMENTS`。 |
 
 ## 已知限制（三条）
 
@@ -96,6 +103,7 @@ python tools/mkpatch.py OLY_E_120_1400_0000_0000.BIN \
 ├── LICENSE              GPL-3.0 全文
 ├── NOTICE               第三方出处与许可
 ├── AI-DISCLOSURE.md     AI 参与方式、证据等级
+├── ACKNOWLEDGEMENTS.md  参考项目、参考内容与“不要搬”清单
 ├── SAFETY.md            机型限定、变砖风险、恢复步骤
 ├── QUICKSTART.md        五步上手（自备官方包 → 校验 → 打补丁 → 拷卡 → 验证）
 ├── LOOKS.md             四款外观与适用场景
