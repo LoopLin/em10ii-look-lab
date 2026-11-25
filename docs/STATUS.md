@@ -21,6 +21,20 @@
 > 本发行版工具集是 2026-11-22 快照（写卡入口 `tools/flash_gate.py`）；工作区的五道门脚本没有随发行版发布。
 > 详细说明见 `docs/releases/2026-11-24.md`。
 
+> ### 2026-11-26 研究快照
+>
+> **发行物仍未变**：`patches/RELEASE_v1.patch`，成品 sha `0b08a232…cafad`；没有新 BIN。
+>
+> - **标准档 HSL**：结论从“表没送到”收窄为“HSL 页没被选中”。标准帧 `O=0`，`d3` 的 bit3/bit16 都不置位，consumer/uploader 不执行；不是再填一次表能解决的。
+> - **四槽对象**：设计被判 FAIL（置位门排除标准码、`+0x38` bit28 未采样、没有 d3 位写者）；未构建、未上机。
+> - **A′ 结构包**：真机 boot loop；根因是在 `cmp 0xF00D` 之前无条件调 publisher/写 bit16，开机/LV 帧也执行。已停用。
+> - **B0-P1 探针**：16 张有效记录 `M=FF/O=0`；H1 是标准 HSL 主体，不是 ART 载体，因此不能据此判 ART HSL 死刑。
+> - **B3 设计**：P0 只读 → P1 对象 only → P2 页选择+bit16 → P3 表/mask；只设计，未构建。
+> - **先例**：`om10mi-mods` 的 14 个 look 是 Picture Mode 槽，Color Creator 是独立 12 区 HSL 色轮；不能当 ART HSL 证据。
+> - **验证纪律**：子智能体的离线报告只作假设；每层必须过模拟器 + 定期真机，冲突时以真机为准。
+>
+> 详细说明见 `docs/releases/2026-11-26.md` 与 `research/11-hsl-standard-2026-11-26.md`。
+
 ## 1. 目标
 
 把 Olympus E-M10 II（E120，v1.4）的四档影像风格替换成四款胶片模拟，并做到**全部打通才出正式版**：
