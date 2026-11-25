@@ -101,6 +101,7 @@ python tools/mkpatch.py OLY_E_120_1400_0000_0000.BIN \
 .
 ├── README.md            本文件
 ├── LICENSE              GPL-3.0 全文
+├── LICENSES/            Apache-2.0 与 MIT 全文
 ├── NOTICE               第三方出处与许可
 ├── AI-DISCLOSURE.md     AI 参与方式、证据等级
 ├── ACKNOWLEDGEMENTS.md  参考项目、参考内容与“不要搬”清单
