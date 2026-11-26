@@ -35,6 +35,18 @@
 >
 > 详细说明见 `docs/releases/2026-11-26.md` 与 `research/11-hsl-standard-2026-11-26.md`。
 
+> ### 2026-11-27 研究快照
+>
+> **发行物仍未变**：`patches/RELEASE_v1.patch`，成品 sha `0b08a232…cafad`；没有新 BIN。
+>
+> - **A3 忙门**：publisher 前读 `0xA1C1CECC & 0xC0000000`，忙则走 stock 返回；真机 96–98 同一次开机三张完整、无重启。只证明“写卡中不重启”，不证明 HSL 生效。
+> - **A7N 标记**：`0x604B9786` 在写卡事务内；117 无标记，118 `E1`（armed=0），119 `E2`（fileif 忙）；062–067 重复同一规律。该入口永远不可能 publish。
+> - **A8/A8B close 探针**：`0x604638C6`、`0x6046405C` 两个 fclose 点都 `close_seen=0`；120–133 反复确认。两者都不是 JPEG close 路径，停止盲试。
+> - **下一步**：静态读文件服务命令分发器 `0x604633A8` 的命令表，找真正的 close 处理函数；找到之前不构建 publish 包、不写卡。
+> - **备选**：若 close 路线仍失败，按工作区 `docs/NOW.md` §7 的备选 1（look 对象载体）/备选 2（consumer 指针）评估，不直接开新包。
+>
+> 详细说明见 `docs/releases/2026-11-27.md` 与 `research/12-hsl-publish-close-2026-11-27.md`。
+
 ## 1. 目标
 
 把 Olympus E-M10 II（E120，v1.4）的四档影像风格替换成四款胶片模拟，并做到**全部打通才出正式版**：

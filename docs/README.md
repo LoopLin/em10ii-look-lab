@@ -24,7 +24,8 @@
 - [`release/UPLOAD-CHECKLIST.md`](release/UPLOAD-CHECKLIST.md) —— **仓库结构与发布规则（现行）**
 - [`release/RELEASE-CHECKLIST.md`](release/RELEASE-CHECKLIST.md) —— 正式包验收判据
 - [`release/PACKAGING-REPORT-2026-11-22.md`](release/PACKAGING-REPORT-2026-11-22.md) —— 2026-11-22 打包记录（历史；路径以本文为准）
-- [`releases/2026-11-26.md`](releases/2026-11-26.md) —— 最新研究快照（发行物未变）
+- [`releases/2026-11-27.md`](releases/2026-11-27.md) —— 最新研究快照（发行物未变）
+- [`releases/2026-11-26.md`](releases/2026-11-26.md) —— 上一版研究快照
 - [`releases/2026-11-24.md`](releases/2026-11-24.md) —— 上一版发行说明
 - [`releases/README.md`](releases/README.md) —— 发行历史索引
 - [`dev/DEV-SCRIPTS-2026-11-22.md`](dev/DEV-SCRIPTS-2026-11-22.md) —— 2026-11-22 的历史脚本清单（历史；脚本已移出发行树）
